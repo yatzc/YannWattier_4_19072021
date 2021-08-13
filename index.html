@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="Projet GameOn" />
+	  <meta name="author"      content="Yann WATTIER" />
+    <meta name="viewport"    content="width=device-width,initial-scale=1" />
+    <link rel="SHORTCUT ICON" href="http://yann.wattier.free.fr/Block.ico" />
+    <link rel="stylesheet" href="modal.css" />
+    <!-- font -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Sans"/>
+    <title>Reservation</title>
+  </head>
+  <body>
+    <!--===========================
+        HEADER
+    ============================-->
+    <div class="topnav" id="myTopnav">
+      <div class="header-logo">
+        <img alt="logo" src="Logo.png" />
+      </div>
+      <div class="main-navbar">
+        <a href="#" class="active"><span>Accueil</span></a>
+        <a href="#"><span>Détails de l'évènement</span></a>
+        <a href="#"><span>À propos</span></a>
+        <a href="#"><span>Contact</span></a>
+        <a href="#"><span>Évènements passés</span></a>
+        <a href="javascript:void(0);" class="icon" onclick="editNav()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+    </div>
+    <!--===========================
+      MAIN
+    ============================-->
+    <main>
+      <!--=============
+        CONTENT
+      ==============-->
+      <section class="hero-section">
+        <div class="hero-content">
+          <!-- text -->
+          <h1 class="hero-headline">
+            Marathon national
+            <br>
+            de jeux vidéos
+          </h1>
+          <p class="hero-text">
+            Vous aimez jouer ? Notre prochain évènement gaming est ouvert
+            aux réservations... Places limitées !
+          </p>
+          <!-- btn signup @media up 1020 -->
+          <button class="btn-signup modal-btn">
+            Je m'inscris
+          </button>
+        </div>
+        <!-- image content -->
+        <div class="hero-img">
+          <img src="./bg_img.jpg" alt="img" />
+        </div>
+        <!-- btn signup @media under 1020 -->
+        <button class="btn-signup modal-btn">
+          Je m'inscris
+        </button>
+      </section>
+
+      <!--=============
+        FORM modal
+      ==============-->
+      <section class="bground">
+        <div class="content">
+          <span class="close" id="closeform"></span>
+          <div class="modal-body">
+            <form action="index.html" method="GET" id="recordingForm">
+              <div class="formData noBr">
+                <label for="first">Prénom</label>
+                <input class="text-control" type="text" id="first" name="first" placeholder="Prénom" />
+                <small id="smallFirst"></small>
+              </div>
+              <div class="formData noBr">
+                <label for="last">Nom</label>
+                <input class="text-control" type="text" id="last" name="last" placeholder="Nom" />
+                <small id="smallLast"></small>
+              </div>
+              <div class="formData noBr">
+                <label for="email">E-mail</label>
+                <input class="text-control" type="email" id="email" name="email" placeholder="email@email.com" />
+                <small id="smallEmail"></small>
+              </div>
+              <div class="formData noBr">
+                <label for="birthdate">Date de naissance</label>
+                <input class="text-control" type="date" id="birthdate" name="birthdate" />
+                <small id="smallBirthdate"></small>
+              </div>
+              <div class="formData noBr">
+                <label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label><br>
+                <input class="text-control" type="text" id="quantity" name="quantity" placeholder="0" />
+                <small id="smallQuantity"></small>
+              </div>
+              <label>Quelles villes ?</label>
+              <div class="formData">
+                <input class="checkbox-input" type="checkbox" id="location1" name="location" value="New York"/>
+                <label class="checkbox-label" for="location1">
+                  <span class="checkbox-icon"></span>
+                  New York
+                </label>
+                <input class="checkbox-input" type="checkbox" id="location2" name="location" value="San Francisco"/>
+                <label class="checkbox-label" for="location2">
+                  <span class="checkbox-icon"></span>
+                  San Francisco
+                </label>
+                <input class="checkbox-input" type="checkbox" id="location3" name="location" value="Seattle"/>
+                <label class="checkbox-label" for="location3">
+                  <span class="checkbox-icon"></span>
+                  Seattle
+                </label>
+                <input class="checkbox-input" type="checkbox" id="location4" name="location" value="Chicago"/>
+                <label class="checkbox-label" for="location4">
+                  <span class="checkbox-icon"></span>
+                  Chicago
+                </label>
+                <input class="checkbox-input" type="checkbox" id="location5" name="location" value="Boston"/>
+                <label class="checkbox-label rightPosition" for="location5">
+                  <span class="checkbox-icon"></span>
+                  Boston
+                </label>
+                <input class="checkbox-input" type="checkbox" id="location6" name="location" value="Portland"/>
+                <label class="checkbox-label" for="location6">
+                  <span class="checkbox-icon"></span>
+                  Portland
+                </label>
+              </div>
+              <!-- condition & news lettre -->
+              <div class="formData condition">
+                <input class="checkbox-input" type="checkbox" name="checkbox1" id="checkbox1"  />
+                <label class="checkbox2-label noBr" for="checkbox1" id="checkbox-label-condition">
+                  <span class="checkbox-icon"></span>
+                  J'ai lu et accepté les conditions d'utilisation.
+                </label>
+                <small id="smallCondition"></small>
+                <input class="checkbox-input" type="checkbox" id="checkbox2" />
+                <label class="checkbox2-label" for="checkbox2">
+                  <span class="checkbox-icon"></span>
+                  Je souhaite être prévenu des prochains évènements.
+                </label>
+              </div>
+              <!-- btn validate form -->
+              <input class="btn-submit" id="btn-goToTks" type="submit" value="C'est parti" />
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!--=============
+        TKS modal
+      ==============-->
+      <section class="bground-tks">
+        <div class="content-tks">
+          <span class="close" id="close-tks"></span>
+          <div class="thanks-body">
+              <div class="wrap">
+                <div class="text-tks">
+                  Merci d'avoir soumis<br>
+                  vos informations<br>
+                  d'inscription<br>
+                </div>
+                
+                <!-- btn exit thanks -->
+                <div class="btn-tks">
+                  <input class="btn-close-tks" id="btn-close-tks" type="submit" value="Fermer"/>
+                </div>
+              </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+    <!--===========================
+      FOOTER
+    ============================-->
+    <footer>
+      <p class="copyrights">Copyright 2014 - 2020, GameOn Inc.</p>
+    </footer>
+    
+    <script src="modal.js"></script>
+  </body>
+</html>
